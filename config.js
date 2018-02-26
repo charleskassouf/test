@@ -2,7 +2,7 @@
 module.exports = {
   serviceName: "cart",
   serviceVersion: 1,
-  servicePort: 6531,
+  servicePort: 6532,
   serviceGroup: "SOAJS ",
   extKeyRequired: true,
   oauth: false,
