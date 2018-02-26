@@ -15,7 +15,7 @@ module.exports = {
   "errors": {},
   "schema": {
     "get": {
-      "/shoppingcart/:userId": {
+      "/test/:userId": {
         "_apiInfo": {
           "l": "Get userId",
           "group": "Basic",
