@@ -6,7 +6,7 @@ module.exports = {
   serviceGroup: "SOAJS ",
   extKeyRequired: true,
   oauth: false,
-  urac: false,
+  urac: true,
   type: "service",
   prerequisites: {
     cpu: '',
