@@ -13,5 +13,15 @@ module.exports = {
     memory: ''
   },
   "errors": {},
-  "schema": {}
+  "schema": {
+    "get": {
+      "/shoppingcart/:userId": {
+        "_apiInfo": {
+          "l": "Get userId",
+          "group": "Basic",
+          "groupMain": false
+        },
+      }
+    }
+  }
 };
