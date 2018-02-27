@@ -149,7 +149,7 @@ var utils = {
 	}
 };
 
-p;
+
 utils.init(function(err,response,body){
 	if (err) {
 		console.log(JSON.stringify (err, null, 2));
