@@ -19,7 +19,6 @@ module.exports = {
         404: "Error Adding Entry!",
         405: "Error Updating Entry!",
         406: "Error Matching Criteria!",
-        407: "Error Loading Model!"
     },
     "schema": {
         "commonFields": {
