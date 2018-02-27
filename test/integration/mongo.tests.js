@@ -1,13 +1,13 @@
 "use strict";
-//var assert = require("assert");
+var assert = require("assert");
 //var _ = require("lodash");
 var helper = require("../helper.js");
 
 var Mongo = require('soajs').mongo;
-//var dbConfig = require("./db.config.test.js");
+var dbConfig = require("./db.config.test.js");
 var myDBConfig = dbConfig();
 myDBConfig.name = "myContacts";
-//var mongo = new Mongo(myDBConfig);
+var mongo = new Mongo(myDBConfig);
 
 //var servicePort = helper.requireModule('./config.js').servicePort;
 //var serviceName = helper.requireModule('./config.js').serviceName;
@@ -16,12 +16,10 @@ myDBConfig.name = "myContacts";
 
 describe('Starting Integration tests', function () {
 
-	// before(function (done) {
-	// 	mongo.remove('records',{}, function(error){
-	// 		assert.ifError(error);
-	//         done();
-	// 	});
-	// });
+	before(function (done) {
+	console.log( "hiii" ); // ToDelete #2del
+    assert.deepEqual(1, 1);
+	});
 	//
 	// beforeEach(function(done){
 	// 	mongo.find('records',{}, function(error, data){
@@ -62,20 +60,20 @@ describe('Starting Integration tests', function () {
 	// 	});
 	// });
     //
-	// describe("Testing Get", function(){
-	// 	it("get 1 Contact", function(done){
-	// 		var expected = dbRecords[0];
-	// 		expected._id = expected._id.toString();
-	// 		helper.requester("get", {
-	// 			uri: 'http://localhost:' + servicePort + '/contact/' + dbRecords[0]._id.toString() + '/?model=mongo',
-	// 			body: null,
-	// 			form: null
-	// 		}, function (err, body) {
-	// 			assert.ifError(err);
-	// 			assert.deepEqual(body, {result: true, data: expected});
-	// 			done();
-	// 		});
-	// 	});
+    // describe("Testing Get", function(){
+		// it("get 1 Contact", function(done){
+		// 	var expected = dbRecords[0];
+		// 	expected._id = expected._id.toString();
+		// 	helper.requester("get", {
+		// 		uri: 'http://localhost:' + servicePort + '/contact/' + dbRecords[0]._id.toString() + '/?model=mongo',
+		// 		body: null,
+		// 		form: null
+		// 	}, function (err, body) {
+		// 		assert.ifError(err);
+		// 		assert.deepEqual(body, {result: true, data: expected});
+		// 		done();
+		// 	});
+		// });
     //
 	// 	it("wrong id", function(done){
 	// 		helper.requester("get", {
