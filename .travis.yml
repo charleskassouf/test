@@ -22,7 +22,6 @@ before_install:
     - 'sudo apt-get update && sudo apt-get install make g++'
 before_script:
     - 'npm install -g grunt-cli'
-script:
-    - 'grunt coverage'
+
 after_success:
     - 'node ./soajs.cd.js'

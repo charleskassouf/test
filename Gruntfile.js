@@ -101,9 +101,9 @@ module.exports = function (grunt) {
                 APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/'
             },
 	        artifact: {
-            	SOAJS_TEST: true,
-		        SOAJS_ENV: "dev",
-		        SOAJS_PROFILE:"/opt/soajs/node_modules/soajs.utilities/data/artifact/profile.js"
+                // SOAJS_TEST: true,
+		        // SOAJS_ENV: "dev",
+		        // SOAJS_PROFILE:"/opt/soajs/node_modules/soajs.utilities/data/artifact/profile.js"
 	        }
         },
 
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
                 src: ['doc/']
             },
             coverage: {
-                src: ['test/coverage/']
+                src: ['test/integration/']
             }
         },
 
@@ -148,18 +148,18 @@ module.exports = function (grunt) {
             //     src: ['test/unit/*.js']
             // },
             integration: {
-                options: {
-                    reporter: 'spec',
-                    timeout: 90000
-                },
-                src: ['test/integration/_server.js']
+                // options: {
+                //     reporter: 'spec',
+                //     timeout: 90000
+                // },
+                // src: ['test/integration/_server.js']
             }
         },
 
         coveralls: {
             options: {
                 // LCOV coverage file relevant to every target
-                src: 'test/coverage/reports/lcov.info',
+           //     src: 'test/coverage/reports/lcov.info',
 
                 // When true, grunt-coveralls will only print a warning rather than
                 // an error, to prevent CI builds from failing unnecessarily (e.g. if
@@ -168,7 +168,7 @@ module.exports = function (grunt) {
             },
             your_target: {
                 // Target-specific LCOV coverage file
-                src: 'test/coverage/reports/lcov.info'
+               // src: 'test/coverage/reports/lcov.info'
             }
         }
     });
