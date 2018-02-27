@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    serviceName: "CICD",
+    serviceName: "test",
     serviceVersion: 1,
     servicePort: 5456,
     extKeyRequired: false,
@@ -25,7 +25,7 @@ module.exports = {
         "commonFields": {
             "id": {
                 "source": ['params.id'],
-                "required": true,
+                "required": false,
                 "validation": {
                     "type": "string"
                 }
@@ -49,110 +49,6 @@ module.exports = {
                 },
                 "commonFields": ["id", "model"]
             },
-
-            "/contact/match/:q": {
-                "_apiInfo": {
-                    "l": "Get contacts matching a query",
-                    "group": "Advance",
-                    "groupMain": true
-                },
-                "commonFields": ["model"],
-                "q": {
-                    "source": ['params.q'],
-                    "required": true,
-                    "validation": {
-                        "type": "string"
-                    }
-                }
-            },
-
-            "/contacts": {
-                "_apiInfo": {
-                    "l": "Get all contacts",
-                    "group": "Basic",
-                    "groupMain": true
-                },
-                "commonFields": ["model"],
-                "from": {
-                    "source": ['query.from', 'body.from'],
-                    "required": false,
-                    "default": 0,
-                    "validation": {
-                        "min": 0,
-                        "max": 100,
-                        "type": "integer"
-                    }
-                },
-                "to": {
-                    "source": ['query.to', 'body.to'],
-                    "required": false,
-                    "default": 100,
-                    "validation": {
-                        "min": 0,
-                        "max": 100,
-                        "type": "integer"
-                    }
-                }
-            }
         },
-        "post": {
-            "/contact": {
-                "_apiInfo": {
-                    "l": "Add new Contact(s)",
-                    "group": "Basic",
-                    "groupMain": false
-                },
-                "commonFields": ["model"],
-                "data": {
-                    "source": ["body.data"],
-                    "required": true,
-                    "validation": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": require(__dirname + "/model/schemas/contact.js")
-                            },
-                            {
-                                "type": "array",
-                                "minItems": 1,
-                                "uniqueItems": true,
-                                "items": {
-                                    "type": "object",
-                                    "properties": require(__dirname + "/model/schemas/contact.js")
-                                }
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-        "put": {
-            "/contact/:id": {
-                "_apiInfo": {
-                    "l": "Update contact by ID",
-                    "group": "Basic",
-                    "groupMain": false
-                },
-                "commonFields": ["id", "model"],
-                "data": {
-                    "required": true,
-                    "source": ["body.data"],
-                    "validation": {
-                        "type": "object",
-                        "properties": require(__dirname + "/model/schemas/contact.js")
-                    }
-                }
-            }
-        },
-        "delete": {
-            "/contact/:id": {
-                "_apiInfo": {
-                    "l": "Delete contact by ID",
-                    "group": "Basic",
-                    "groupMain": false
-                },
-                "commonFields": ["id", "model"]
-            }
-        }
     }
 };
