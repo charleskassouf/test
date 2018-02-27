@@ -125,9 +125,9 @@ module.exports = function (grunt) {
         },
 
         storeCoverage: {
-            options: {
-                dir: 'test/coverage/reports'
-            }
+            // options: {
+            //     dir: 'test/coverage/reports'
+            // }
         },
 
         makeReport: {
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
     grunt.registerTask("integration", ['env:coverage', 'mochaTest:integration']);
     grunt.registerTask("data", ['env:artifact', 'mochaTest:integration']);
     grunt.registerTask("test", ['clean', 'env:coverage', 'instrument', 'mochaTest:integration']);
-    grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:integration', 'storeCoverage', 'makeReport', 'coveralls']);
+    grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:integration']);
 
 };
 
