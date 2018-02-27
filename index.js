@@ -89,5 +89,5 @@ service.init(function () {
 		});
 	});
 
-	service.start();
+	// service.start();
 });

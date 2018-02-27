@@ -4,7 +4,6 @@ module.exports = {
     serviceName: "CICD",
     serviceVersion: 1,
     servicePort: 5456,
-    serviceGroup: "SOAJS",
     extKeyRequired: false,
 	oauth:false,
     type: "service",
