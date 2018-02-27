@@ -56,7 +56,7 @@ var utils = {
 		}
 
 		//Check if required envs are set
-		console.log("Checking if required environment variables are set");
+		console.log("Checking if required environment variables are set")
 		//check auth env variables
 		if(!authKey || !deployToken){
 			console.log("Error: Missing AUTH env variables. Aborting...");
@@ -79,9 +79,16 @@ var utils = {
 	"createRequest": function(cb) {
 		var params = {};
 
-		params.uri = dashboardProtocol + "://" + dashboardDomain + ":" + dashboardPort +
-			"/dashboard" + dashboardAPIRoute + "?deploy_token=" + deployToken;
+		params.uri = dashboardProtocol + "://" + dashboardDomain + ":" + dashboardPort + "/dashboard" + dashboardAPIRoute;
 
+		params.qs = {
+			deploy_token : deployToken
+		};
+		
+		if(process.env.SOAJS_PROJECT){
+			params.qs.soajs_project = process.env.SOAJS_PROJECT;
+		}
+		
 		params.headers = {
 			"key" : authKey,
 			"Content-Type": "application/json"
