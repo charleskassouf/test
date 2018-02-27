@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-    serviceName: "artifact",
+    serviceName: "CICD",
     serviceVersion: 1,
-    servicePort: 4999,
+    servicePort: 5456,
     serviceGroup: "SOAJS artifact",
     extKeyRequired: false,
 	oauth:false,
