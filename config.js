@@ -3,10 +3,10 @@ module.exports = {
   serviceName: "cart",
   serviceVersion: 1,
   servicePort: 6532,
-  serviceGroup: "SOAJS ",
-  extKeyRequired: true,
+  serviceGroup: "SOAJS",
+  extKeyRequired: false,
   oauth: false,
-  urac: true,
+  urac: false,
   type: "service",
   prerequisites: {
     cpu: '',
@@ -15,7 +15,7 @@ module.exports = {
   "errors": {},
   "schema": {
     "get": {
-      "/test/:userId": {
+      "/test": {
         "_apiInfo": {
           "l": "Get userId",
           "group": "Basic",

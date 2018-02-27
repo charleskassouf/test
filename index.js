@@ -1,5 +1,4 @@
 'use strict';
-var soajs = require('soajs');
 var config = require('./config.js');
 var BLModule = require("./lib/index");
 
