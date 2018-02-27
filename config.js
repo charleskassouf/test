@@ -18,7 +18,6 @@ module.exports = {
         403: "Error Deleting Entry!",
         404: "Error Adding Entry!",
         405: "Error Updating Entry!",
-        406: "Error Matching Criteria!",
     },
     "schema": {
         "commonFields": {
