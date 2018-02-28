@@ -84,11 +84,11 @@ var utils = {
 		params.qs = {
 			deploy_token : deployToken
 		};
-
+		
 		if(process.env.SOAJS_PROJECT){
 			params.qs.soajs_project = process.env.SOAJS_PROJECT;
 		}
-
+		
 		params.headers = {
 			"key" : authKey,
 			"Content-Type": "application/json"
