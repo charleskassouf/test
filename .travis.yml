@@ -1,5 +1,4 @@
 sudo: required
-group: deprecated-2017Q2
 language: node_js
 node_js: 6.9.5
 services:
@@ -19,12 +18,10 @@ addons:
         - localhost
         - dev-controller
 before_install:
-    - sudo apt-get update && sudo apt-get install make g++
+    - 'sudo apt-get update && sudo apt-get install make g++'
 before_script:
-    - npm install -g grunt-cli
-    - sleep 10
-
+    - 'npm install -g grunt-cli'
 script:
-    - grunt coverage
+    - 'grunt coverage'
 after_success:
-    - node ./soajs.cd.js
+    - 'node ./soajs.cd.js'
