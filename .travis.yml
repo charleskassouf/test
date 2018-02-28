@@ -1,32 +1,28 @@
+sudo: required
+group: deprecated-2017Q2
 language: node_js
-
-node_js: 6
-
+node_js: 6.9.5
 services:
-  - mongodb
-
+    - mongodb
 env:
-  - CXX=g++-4.8
-
+    - CXX=g++-4.8
 branches:
-  only:
-    - master
-
+    only:
+        - master
 addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-  hosts:
-    - localhost
-
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - g++-4.8
+    hosts:
+        - localhost
+        - dev-controller
 before_install:
-  - sudo apt-get update && sudo apt-get install sendmail python make g++
-
+    - 'sudo apt-get update && sudo apt-get install make g++'
 before_script:
-  - npm install -g grunt-cli
-  - sleep 10
-
+    - 'npm install -g grunt-cli'
 script:
-  - grunt coverage
+    - 'grunt coverage'
+after_success:
+    - 'node ./soajs.cd.js'
