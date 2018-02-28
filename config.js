@@ -47,6 +47,14 @@ module.exports = {
                 },
                 "commonFields": ["id", "model"]
             },
+          "/contacts/:id": {
+            "_apiInfo": {
+              "l": "Get contact by ID",
+              "group": "Basic",
+              "groupMain": false
+            },
+            "commonFields": ["id", "model"]
+          },
         },
     }
 };

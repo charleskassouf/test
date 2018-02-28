@@ -34,6 +34,15 @@ service.init(function () {
 		});
 	});
 
+
+  service.get("/contacts/:id", function (req, res) {
+    initBLModel(req, res, function (BL) {
+      BL.getEntry(config, req.soajs, function (error, response) {
+        return res.json(req.soajs.buildResponse(error, response));
+      });
+    });
+  });
+
 	/**
 	 * Search for contact
 	 */
