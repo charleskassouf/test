@@ -21,7 +21,7 @@ addons:
 before_install:
     - 'sudo apt-get update && sudo apt-get install make g++'
 before_script:
-    - 'sudo npm install -g grunt-cli'
+    - 'npm install -g grunt-cli'
 script:
     - 'grunt coverage'
 after_success:
