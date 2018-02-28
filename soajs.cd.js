@@ -71,7 +71,7 @@ var utils = {
 		console.log("Launching CD call...");
 		utils.createRequest(function(params){
 			console.log(params.uri);
-			console.log(JSON.stringify(params.body, null, 2));
+			console.log(JSON.stringify(params, null, 2));
 			request.post(params, cb);
 		});
 	},
@@ -84,11 +84,11 @@ var utils = {
 		params.qs = {
 			deploy_token : deployToken
 		};
-		
+
 		if(process.env.SOAJS_PROJECT){
 			params.qs.soajs_project = process.env.SOAJS_PROJECT;
 		}
-		
+
 		params.headers = {
 			"key" : authKey,
 			"Content-Type": "application/json"
