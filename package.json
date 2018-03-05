@@ -18,6 +18,7 @@
     "test": "grunt coverage"
   },
   "dependencies": {
+    "async": "^2.6.0",
     "express": "*"
   },
   "devDependencies": {
